@@ -2,10 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import $ from 'jquery';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import song1 from '../../assets/Greatness.mp3'
+
 
 import NavBar from '../navBar/NavBar'
 import './HomePage.css'
