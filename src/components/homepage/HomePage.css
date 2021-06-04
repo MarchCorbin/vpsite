@@ -1,0 +1,44 @@
+.top-nav {
+  list-style: none;
+  padding:0;
+  background:red;
+}
+
+.nav-option {
+  font-size: 2em;
+}
+
+li {
+  display: inline;
+  margin: 1em;
+}
+
+li:hover {
+  background: grey;
+  color:white;
+  cursor: pointer;
+}
+
+.options {
+  flex:1;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+#slider {
+  background: green;
+}
+
+.main-content {
+  height: 80em;
+  background-image: url('../../assets/VPlogo.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left:4em;
+}
+
+.home-player {
+  width:40em;
+}
+
