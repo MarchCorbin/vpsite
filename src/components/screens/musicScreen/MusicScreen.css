@@ -1,0 +1,23 @@
+.single-song {
+  margin:1em;
+  border: 1px solid lightgrey;
+  width:20vw;
+  height:10vh;
+  text-align:right;
+  font-size:.7em;
+  transition:2s;
+}
+
+.single-song:hover {
+  font-size:.9em;
+  transition:2s;
+}
+
+footer {
+  position:fixed;
+  bottom:0;
+}
+
+.music-player {
+  width:100em;
+}

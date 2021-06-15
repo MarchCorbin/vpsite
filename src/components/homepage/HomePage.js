@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,24 +9,11 @@ import 'react-h5-audio-player/lib/styles.css';
 import NavBar from '../navBar/NavBar'
 import './HomePage.css'
 import Header from '../header/Header'
+import vpsongs from '../VPSongs'
 
 const HomePage = () => {
   let slider = document.querySelector('#slider')
   let thumbnailSlider = document.querySelector('#slider_thumbnail')
-
-// $(function(){
-//   $("#slider").slick({
-//     autoplay: true,
-//     speed: 1000,
-//     arrows: false,
-//     asNavFor: "#thumbnail_slider"
-//   });
-//   $("#thumbnail_slider").slick({
-//     slidesToShow: 3,
-//     speed: 1000,    
-//     asNavFor: "#slider"
-//   });
-// });
 
   var settings = {
     slidesToShow: 1,
@@ -44,43 +31,37 @@ const HomePage = () => {
     arrows: true,
 };
 
+    let player = document.querySelector('.home-player')
+    player = React.createRef()
+    let songLocation = 0;
+    const maxLocation = vpsongs.length
 
-var vpsongs = [
-  {
-    title: 'Greatness',
-    location: '../../assets/Greatness.mp3'
-  },
-  {
-    title: 'Meat Posse Jam',
-    location: '../../assets/meatpossejam.mp3'
-  },
-  {
-    title: 'Reap and Contrast Proto',
-    location: '../../assets/REAPANDCONTRASTPROTO.mp3'
-  },
-  {
-    title: 'Reap Krush',
-    location: '../../assets/REAPKRUSH.mp3'
-  },
-  {
-    title: 'VP Afterlife VP Vol2',
-    location: '../../assets/VPAFTERLIFEVPVOL2.mp3'
-  },
-  {
-    title: 'VP Rotting Beat VP',
-    location: '../../assets/VProttingbeatvp.mp3'
-  },
-  {
-    title: 'VP Reap Kilz',
-    location: '../../assets/VPREAPKILZRIP.mp3'
-  }
-]
 
-  const changeSong = (e) => {
-    let songsrc = document.querySelector('.home-player')
-    console.log(e.target.src)
+  const nextSong = (e) => {
+    songLocation++
+    if(songLocation > maxLocation){songLocation = 0}
+    player.current.audio.current.src = vpsongs[songLocation].location
+    updateHeader()
   }
 
+  const previousSong = (e) => {
+    songLocation--
+    if(songLocation < 0){songLocation = 0}
+    player.current.audio.current.src = vpsongs[songLocation].location
+    updateHeader()
+  }
+
+  useEffect(() => {
+  console.log(vpsongs[songLocation].title)
+})
+
+  const updateHeader = () => {
+    const songTitle = document.querySelector('.song-title')
+    if(songTitle) {
+      songTitle.innerText = vpsongs[songLocation].title
+    }
+  }
+ 
 
   return (
   <>
@@ -105,13 +86,16 @@ var vpsongs = [
         )
       })}
       </Slider>
+      <h2 className='song-title'>{vpsongs[songLocation].title}</h2>
       <AudioPlayer
-      className="home-player"
-      autoplay
-      showFilledProgress
-      showSkipControls
-      src= '../../assets/Greatness.mp3'
-      onPlay={(e) => changeSong(e)}
+        ref={player}
+        className="home-player"
+        header={updateHeader()}
+        showFilledProgress
+        showSkipControls
+        src= {vpsongs[songLocation].location}
+        onClickNext={(e) => nextSong(e)}
+        onClickPrevious={(e) => previousSong(e)}
       />
     </div>
   </>

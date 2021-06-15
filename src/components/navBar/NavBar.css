@@ -1,0 +1,13 @@
+.nav-option {
+  text-decoration: none;
+  font-size:2em;
+  color:black
+} 
+
+
+.top-nav {
+  list-style: none;
+  padding: 0;
+  background: red;
+}
+
