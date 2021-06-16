@@ -10,6 +10,8 @@
 
 .single-song:hover {
   font-size:.9em;
+  height:11vh;
+  width:21vw;
   transition:2s;
 }
 
@@ -20,4 +22,23 @@ footer {
 
 .music-player {
   width:100em;
+  background:black;
+  color:white;
+}
+
+.song-title {
+  pointer-events: none;
+  cursor:pointer;
+}
+
+.song-container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:center;
+}
+
+.current-song {
+  margin-bottom: .5em;
+  margin-left:.5em;
 }
