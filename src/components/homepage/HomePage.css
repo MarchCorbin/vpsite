@@ -4,9 +4,10 @@ li {
 }
 
 li:hover {
-  background: grey;
-  color:white;
+  background: purple;
+  color:yellow;
   cursor: pointer;
+  border-radius:5px;
 }
 
 .options {
