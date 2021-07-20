@@ -1,5 +1,6 @@
 .single-song {
   flex: 1;
+  /* position: absolute; */
   flex-direction: row;
   color: black;
   margin:1em;

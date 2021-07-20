@@ -9,6 +9,7 @@ const NavBar = () => {
    <Link style={{'text-decoration': 'none'}}  to='/musicscreen'>
       <li className="nav-option">Music</li>
    </Link>
+      <li className="nav-option">Video</li>
       <li className="nav-option">Merch</li>
       <Link style={{'text-decoration': 'none'}} to='/contactscreen'>
       <li className="nav-option">Contact</li>

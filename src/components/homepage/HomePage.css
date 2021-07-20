@@ -1,13 +1,15 @@
 li {
   display: inline;
   margin: 1em;
+  transition:0.5s;
 }
 
 li:hover {
-  background: purple;
-  color:yellow;
+  background: white;
+  color:black;
   cursor: pointer;
   border-radius:5px;
+  transition:0.5s;
 }
 
 .options {
@@ -22,14 +24,16 @@ li:hover {
 }
 
 .main-content {
-  height: 80em;
+  display:inline-block;
+  height: 100vh;
   background-image: url('../../assets/VPlogo.jpeg');
   background-size: 100%;
   background-repeat: no-repeat;
-  margin-left:4em;
+  width:80vw;
 }
 
 .home-player {
-  width:40em;
+  width:100vw;
+  background: black;
 }
 

@@ -21,7 +21,6 @@ const MusicScreen = () => {
     AllSongsArray.forEach((song) => {
       if(song.classList.contains('active')){
         song.classList.remove('active')
-        
       }
     })
     removeImages()
@@ -44,6 +43,22 @@ const MusicScreen = () => {
     <>
     <Header />
     <NavBar />
+    <table>
+      <tr>
+        <th>Songs</th>
+      </tr>
+      {VPSongs.map((song) => {
+      idnum++;
+      return(
+        <tr id={idnum} onClick={handleClick} className="single-song">
+            
+          <td><img className={`song${idnum} play-icon`} /></td>
+          
+          <td className="song-title">{song.title}</td>
+        </tr>
+      )
+    })}
+    </table>
     <div className='song-container'>
       <div className='seperator'></div>
     {VPSongs.map((song) => {

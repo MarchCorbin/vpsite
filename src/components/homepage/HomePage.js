@@ -67,8 +67,8 @@ const HomePage = () => {
   <>
     <Header />
    <NavBar />
-    <div backgroundimage src='' className="main-content">
-    <Slider {...settings} className="slider"  id='slider'>
+    <div backgroundimage className="main-content">
+    {/* <Slider {...settings} className="slider"  id='slider'>
       {vpsongs.map((song) => {
         return(
           <div className="options">
@@ -85,8 +85,9 @@ const HomePage = () => {
           </div>
         )
       })}
-      </Slider>
+      </Slider> */}
       <h2 className='song-title'>{vpsongs[songLocation].title}</h2>
+      <footer>
       <AudioPlayer
         ref={player}
         className="home-player"
@@ -97,6 +98,7 @@ const HomePage = () => {
         onClickNext={(e) => nextSong(e)}
         onClickPrevious={(e) => previousSong(e)}
       />
+      </footer>
     </div>
   </>
   )

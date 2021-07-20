@@ -2,6 +2,9 @@
   text-decoration: none;
   font-size:2em;
   color:yellow;
+  float:left;
+  margin:0px 0px 1.5em 0px;
+  width:100%;
 } 
 
 
@@ -9,5 +12,11 @@
   list-style: none;
   padding: 0;
   background: black;
+  width:15vw;
+  height: 100vh;
+  display:inline-flex;
+  flex-direction: column;
+  position: fixed
 }
+
 
