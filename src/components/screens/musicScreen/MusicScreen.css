@@ -1,27 +1,13 @@
 .single-song {
   flex: 1;
-  /* position: absolute; */
   flex-direction: row;
   color: black;
   margin:1em;
   border-bottom: 1px solid lightgrey;
   width:100vw;
-  /* height:4vh; */
-  /* text-align:right; */
   font-size:.7em;
   transition:2s;
-   /* box-shadow: 0 1px 0 rgb(0 0 0 / 30%),
-   0 2px 2px -1px rgb(0 0 0 / 50%),
-   0 1px 0 rgb(255 255 255 / 30%) inset; */
-   /* background: linear-gradient(to right, rgb(29, 67, 80), rgb(164, 57, 49)); */
 }
-
-/* .single-song:hover {
-  font-size:.9em;
-  height:11vh;
-  width:21vw;
-  transition:2s;
-} */
 
 footer {
   position:fixed;
@@ -38,7 +24,7 @@ footer {
   padding-left: 1em;
   pointer-events: none;
   cursor:pointer;
-  display: inline;
+  display: inline-block;
   position:relative;
 }
 
@@ -78,4 +64,9 @@ footer {
   position:fixed;
   border-left: 2px solid gray;
   height:100vh;
+}
+
+.home-footer {
+  flex: 1;
+  text-align: center;
 }

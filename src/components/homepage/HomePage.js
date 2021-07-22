@@ -12,24 +12,7 @@ import Header from '../header/Header'
 import vpsongs from '../VPSongs'
 
 const HomePage = () => {
-  let slider = document.querySelector('#slider')
-  let thumbnailSlider = document.querySelector('#slider_thumbnail')
-
-  var settings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1000,
-    arrows: false,
-};
-
-  var settings2 = {
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    speed: 1000,    
-    asNavFor: slider,
-    arrows: true,
-};
+  let playBtn = document.querySelector('.rhap_play-pause-button')
 
     let player = document.querySelector('.home-player')
     player = React.createRef()
@@ -42,6 +25,7 @@ const HomePage = () => {
     if(songLocation > maxLocation){songLocation = 0}
     player.current.audio.current.src = vpsongs[songLocation].location
     updateHeader()
+    playBtn.click()
   }
 
   const previousSong = (e) => {
@@ -49,6 +33,7 @@ const HomePage = () => {
     if(songLocation < 0){songLocation = 0}
     player.current.audio.current.src = vpsongs[songLocation].location
     updateHeader()
+    playBtn.click()
   }
 
   useEffect(() => {
@@ -65,29 +50,14 @@ const HomePage = () => {
 
   return (
   <>
-    <Header />
+   <Header />
    <NavBar />
     <div backgroundimage className="main-content">
-    {/* <Slider {...settings} className="slider"  id='slider'>
-      {vpsongs.map((song) => {
-        return(
-          <div className="options">
-            <h2>{song.title}</h2>
-          </div>
-        )
-      })}
-    </Slider>
-    <Slider {...settings2}  id='thumbnail_slider'>
-     {vpsongs.map((song) => {
-        return(
-          <div className="options">
-            <h2>{song.title}</h2>
-          </div>
-        )
-      })}
-      </Slider> */}
-      <h2 className='song-title'>{vpsongs[songLocation].title}</h2>
-      <footer>
+      <img className="home-image" src="../../assets/VPlogo.jpeg" />
+      <div className="main-shwocase">TESTING</div>
+      </div>
+      <footer className='home-footer'>
+        <h2 className='song-title'>{vpsongs[songLocation].title}</h2>
       <AudioPlayer
         ref={player}
         className="home-player"
@@ -99,7 +69,7 @@ const HomePage = () => {
         onClickPrevious={(e) => previousSong(e)}
       />
       </footer>
-    </div>
+    
   </>
   )
 }

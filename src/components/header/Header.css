@@ -1,8 +1,10 @@
 header {
   margin:0;
   flex:1;
-  align-items:center;
-  justify-content:center;
+  text-align:center;
+  display:inherit;
+  z-index: -1;
+  flex-direction:column;
 }
 
 .vp-logo {
